@@ -1,0 +1,3 @@
+"0","c_coot=model1$coefficients[1]"
+"0","cduck= model1$coefficients[1]+model1$coefficients[2]"
+"0","cgoose=model1$coefficients[1]+model1$coefficients[3]"

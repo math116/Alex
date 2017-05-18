@@ -1,0 +1,85 @@
+---
+title: "Vigilence in coots, ducks, and geese"
+author: "Alex"
+date: "May 18, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(dplyr)
+mydata<-tbl_df(read.csv("field_data.csv"))
+```
+
+# Introduction
+
+As a class project we were each to design a data collection project, and then
+attempt a statistical analysis of the results. Mine was done on water birds using coots, ducks and geese.  The collection occurred on three different days, with data from each species being collected on each day.
+
+
+# Methods
+
+On a collection day I proceeded to a location ajacent to a body of water. Having located a flock of one of the species of interest I would (use binoculars?) and select a single individual to observe. I would begin a timer and using a finger click counter record every time the individual looked up and around. When the timer alerted I would stop observation and record the counts in my notebook. Other methods I thought of was to record a video of the flock and replay the video for data collection options.  In the end I achieved for each day the records of 10 birds of each species.
+
+# Questions and Approaches
+
+Upon the advice of Dr K, I have organized my data into what is known as a "Tidy Data", format. This allows for easy applcation of a variety of statistical treatment we may want to apply.  Here is a look
+
+```{r}
+summary(mydata)
+boxplot(scans~species,data=mydata, main="species vs scans")
+```
+From the boxplot it is very suggestive that geese have  a  
+significant difference in average scans than the other two species
+
+```{r}
+boxplot(scans~day,data=mydata,main="days vs scans")
+```
+There is nothing apparent from this boxplot  
+
+
+## Answerable Questions
+
+This organization will allow us to ask questions such as  
+1. Is there a significant difference in a species average vigilence on different days?  
+2. Is there a significant difference between species, if so do they change on different days?  
+
+
+# Dr K's Comments
+
+Looking at the tidy data it was apparent that Alex had designed a classical 3x3 factorial experiment with 10 reps.  
+```{r}
+model1<-lm(scans~species,data=mydata)
+model2<-lm(scans~species+day,data=mydata)
+model3<-lm(scans~species*day,data=mydata)
+anova(model1,model2)
+anova(model1,model3)
+summary.lm(model1)
+```
+
+The stats I just did were the following
+I modeled the data only by species (this is the final model)
+Then I checked to see if day was included in the model, would the fit be improved?  
+the anova(model1,model2) command told me it was no improvement
+I the checked for the full model (model3) and anova again said no on that  too.  
+
+```{r}
+c_coot=model1$coefficients[1]
+cduck= model1$coefficients[1]+model1$coefficients[2]
+cgoose=model1$coefficients[1]+model1$coefficients[3]
+```
+
+####so the model says if its a coot, scans = `r c_coot `   
+ 
+
+####if its a duck scans = `r cduck `   
+
+####if its goose scans = `r cgoose `   
+
+
+# Power considetrations
+
+```{r}
+sd(mydata$scans)
+```
+Using Lenths power analysis tool we computed the design has a power 0f around .75 to detect main effects with differences of 3 or more. So the experiment was essentially right sized for the observed data.  

@@ -1,0 +1,91 @@
+species ,scans ,day
+coot ,5,one
+coot ,12,one
+coot ,3,one
+coot ,13,one
+coot ,2,one
+coot ,10,one
+coot ,12,one
+coot ,15,one
+coot ,6,one
+coot ,8,one
+coot ,14,two
+coot ,5,two
+coot ,12,two
+coot ,13,two
+coot ,8,two
+coot ,9,two
+coot ,12,two
+coot ,7,two
+coot ,9,two
+coot ,8,two
+coot ,5,three
+coot ,2,three
+coot ,4,three
+coot ,3,three
+coot ,7,three
+coot ,12,three
+coot ,13,three
+coot ,10,three
+coot ,16,three
+coot ,11,three
+duck,3,one
+duck,9,one
+duck,2,one
+duck,7,one
+duck,2,one
+duck,4,one
+duck,4,one
+duck,1,one
+duck,2,one
+duck,5,one
+duck,10,two
+duck,11,two
+duck,3,two
+duck,9,two
+duck,2,two
+duck,8,two
+duck,7,two
+duck,7,two
+duck,9,two
+duck,10,two
+duck,8,three
+duck,8,three
+duck,6,three
+duck,5,three
+duck,8,three
+duck,10,three
+duck,6,three
+duck,7,three
+duck,6,three
+duck,13,three
+goose,5,one
+goose,1,one
+goose,3,one
+goose,3,one
+goose,7,one
+goose,2,one
+goose,4,one
+goose,2,one
+goose,1,one
+goose,2,one
+goose,2,two
+goose,4,two
+goose,0,two
+goose,2,two
+goose,4,two
+goose,1,two
+goose,3,two
+goose,6,two
+goose,4,two
+goose,5,two
+goose,5,three
+goose,2,three
+goose,3,three
+goose,5,three
+goose,2,three
+goose,1,three
+goose,6,three
+goose,3,three
+goose,2,three
+goose,8,three
