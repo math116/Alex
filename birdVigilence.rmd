@@ -28,13 +28,16 @@ Upon the advice of Dr K, I have organized my data into what is known as a "Tidy 
 ```{r}
 summary(mydata)
 boxplot(scans~species,data=mydata, main="species vs scans")
+
 ```
+  
 From the boxplot it is very suggestive that geese have  a  
 significant difference in average scans than the other two species
 
 ```{r}
 boxplot(scans~day,data=mydata,main="days vs scans")
 ```
+  
 There is nothing apparent from this boxplot  
 
 
@@ -83,3 +86,8 @@ cgoose=model1$coefficients[1]+model1$coefficients[3]
 sd(mydata$scans)
 ```
 Using Lenths power analysis tool we computed the design has a power 0f around .75 to detect main effects with differences of 3 or more. So the experiment was essentially right sized for the observed data.  
+
+#Conclusuion
+
+More details on how the actual taking of the data is in order. It appears to be a randomized block design with days as the blocking factor. We tested as though both factors were normal factor variables in order to check for possible day-species interactions.  Looking at data from other student work who also co0llected data on coots --- there was a noticible difference in average 30 second vigilence counts. 
+In this report with data from Apollo Park we were getting around 8 scans for coots,  the other data from a Lake in Canoga Park was 2-3 scans on average.  It would appear that other factors such as time ofand location of the collection site may also play a role.
